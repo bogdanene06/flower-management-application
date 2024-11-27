@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit existing flower from database</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css} "/>
+
+</head>
+
+<body>
+<!-- custom navbar made by Bogdan Ene ;) -->
+<div th:insert="~{fragments/navbar :: navbar}"></div>
+<h1 style="text-align: center; text-decoration: underline; color: violet; font-size: 20px; inline-block;">
+    Edit flower details</h1>
+<form action="#" th:action="@{/index/edit-flower}" th:object="${flowerToBeEdited}" method="post"
+      style="text-align: center;">
+    <div style="margin-bottom: 20px; text-align: left; display: inline-block;">
+        <label for="id" style="width: 100px; font-weight: bold; display: inline-block;">Id:</label>
+        <input id="id" readonly type="text" th:field="*{id}" style="width: 200px;"/>
+    </div>
+    <br>
+    <div style="margin-bottom: 20px; text-align: left; display: inline-block;">
+        <label for="name" style="width: 100px; font-weight: bold; display: inline-block;">Name:</label>
+        <input id="name" type="text" th:field="*{name}" style="width: 200px;"/>
+    </div>
+    <br>
+    <div style="margin-bottom: 20px; text-align: left; display: inline-block;">
+        <label for="color" style="width: 100px; font-weight: bold; display: inline-block;">Color:</label>
+        <input id="color" type="text" th:field="*{color}" style="width: 200px;"/>
+    </div>
+    <br>
+    <div style="margin-bottom: 20px; text-align: left; display: inline-block;">
+        <label for="price"
+               style="width: 100px; font-weight: bold; display: inline-block; margin-left: 31px;">Price:</label>
+        <input id="price" type="number" th:field="*{price}" step="0.01" min="0" style="width: 200px;"/>
+        <span style="display: inline-block; margin-left: 5px;">Lei</span>
+    </div>
+    <br>
+    <div style="margin-top: 20px;">
+        <input type="submit" value="Save changes"/>
+    </div>
+</form>
+
+</body>
+</html>

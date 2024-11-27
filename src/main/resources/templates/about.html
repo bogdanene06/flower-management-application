@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>About</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}"/>
+</head>
+<body>
+<!-- custom navbar code made by Bogdan Ene ;) -->
+<div th:insert="~{fragments/navbar :: navbar}"></div>
+<!-- end of custom navbar code -->
+<div style="margin-left: 10px">
+    <h1 style="font-size: 20px; text-align: center">Application description</h1>
+    <h1>Flower Management Application</h1>
+    <p>Welcome to the <strong>Flower Management Application</strong>! This project showcases my knowledge and skills in
+        Java, using technologies such as MySQL, Thymeleaf, Spring Boot, HTML, and CRUD operations. Below is an
+        overview of the technologies and features implemented in this application.</p>
+    <h2>Technologies Used</h2>
+    <ul>
+        <li><strong>Java</strong>: The core programming language used for developing the application.</li>
+        <li><strong>Spring Boot</strong>: Used for building the backend REST API and managing dependencies.</li>
+        <li><strong>Thymeleaf</strong>: Integrated for server-side rendering of HTML and providing a seamless user
+            experience.
+        </li>
+        <li><strong>HTML</strong>: Utilized for structuring and presenting the content of the web pages.</li>
+        <li><strong>CSS & Bootstrap</strong>: For styling the application and making it responsive.</li>
+        <li><strong>JPA/Hibernate</strong>: To handle the persistence layer and interact with the database using ORM
+            (Object-Relational Mapping).
+        </li>
+        <li><strong>MySQL</strong>: The relational database used for storing flower data.</li>
+    </ul>
+    <h2>Features</h2>
+    <ul>
+        <li><strong>CRUD Operations</strong>:</li>
+        <ul>
+            <li><strong>Create</strong>: Add new flower entries to the database.</li>
+            <li><strong>Read</strong>: View a list of all flowers and their details.</li>
+            <li><strong>Update</strong>: Modify existing flower details.</li>
+            <li><strong>Delete</strong>: Remove flower entries from the database.</li>
+        </ul>
+        <li><strong>Scheduler</strong>: Automatically insert a new flower into the database every 10 seconds using a
+            scheduler.
+        </li>
+        <li><strong>Responsive Design</strong>: The application is responsive and can be used on various devices, from
+            desktops to mobile phones.
+        </li>
+        <li><strong>User-Friendly Interface</strong>: Easy navigation and interaction using well-structured HTML and
+            styled with Bootstrap.
+        </li>
+    </ul>
+    <h2>How to Run the Application</h2>
+    <ol>
+        <li><strong>Clone the Repository</strong>:
+            <pre><code>git clone https://github.com/bogdanene06/flower-management-application.git</code></pre>
+        </li>
+        <li><strong>Configure the Database</strong>:
+            <p>Set up a MySQL database and update the <code>application.properties</code> file with your database
+                credentials.</p>
+        </li>
+        <li><strong>Build and Run the Application</strong>:
+            <pre><code>mvn clean install
+mvn spring-boot:run</code></pre>
+        </li>
+        <li><strong>Access the Application</strong>:
+            <p>Open your browser and navigate to <a href="http://localhost:8080/index">http://localhost:8080/index</a>.
+            </p>
+        </li>
+    </ol>
+    <h2>Contributing</h2>
+    <p>If you want to contribute to this project, feel free to fork the repository and submit a pull request. All
+        contributions are welcome!</p>
+    <h2>License</h2>
+    <p>This project is licensed under the <a href="https://opensource.org/licenses/MIT">MIT License</a>.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}"/>
+</head>
+<body>
+<div th:fragment="navbar">
+    <!--custom navbar code made by Bogdan Ene ;)-->
+    <div class="d-flex align-items-center justify-content-between" style="margin: 10px 20px;">
+        <div class="d-flex align-items-center">
+            <a href="/index" class="btn btn-success" style="font-size: 15px;"><i class="fas fa-home"></i> Home </a>
+            <a href="/index/add-flower" class="btn btn-primary" style="margin-left: 10px; font-size: 15px;"><i
+                    class="fas fa-plus-circle"></i> Add flower </a>
+            <a href="/index/about" class="btn btn-info" style="margin-left: 10px; font-size: 15px;"><i
+                    class="fas fa-info-circle"></i> About </a>
+        </div>
+        <div class="d-flex align-items-center ml-auto">
+            <form th:action="@{/index}" id="searchForm" class="d-flex align-items-center">
+                <div class="d-flex align-items-center mr-2">
+                    <i class="fa fa-search"></i>
+                    <input id="keyword" type="search" name="keyword" th:value="${keyword}" class="form-control ml-2"
+                           placeholder="Enter keyword">
+                </div>
+                <button type="submit" class="btn btn-secondary ml-2"
+                        style="margin-left: 10px;">Search
+                </button>
+                <div class="input-group ml-2" style="width: auto;">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="pageSize" style="margin-left: 10px">Items per page:</label>
+                    </div>
+                    <select form="searchForm" name="size" th:value="${pageSize}" onchange="changePageSize()"
+                            class="size-select form-control" id="pageSize" style="width: 50px;">
+                        <option th:each="s : ${ {5, 10, 15, 30, 100} }" th:value="${s}" th:text="${s}"
+                                th:selected="${s == pageSize}"></option>
+                    </select>
+                </div>
+                <button id="btnClear" class="btn btn-info ml-2" style="margin-left: 10px">Clear</button>
+            </form>
+        </div>
+    </div>
+    <!--end of custom navbar code-->
+</div>
+</body>
+</html>
