@@ -23,9 +23,7 @@
                     <input id="keyword" type="search" name="keyword" th:value="${keyword}" class="form-control ml-2"
                            placeholder="Enter keyword">
                 </div>
-                <button type="submit" class="btn btn-secondary ml-2"
-                        style="margin-left: 10px;">Search
-                </button>
+                <button type="submit" class="btn btn-secondary ml-2" style="margin-left: 10px;">Search</button>
                 <div class="input-group ml-2" style="width: auto;">
                     <div class="input-group-prepend">
                         <label class="input-group-text" for="pageSize" style="margin-left: 10px">Items per page:</label>
@@ -36,7 +34,8 @@
                                 th:selected="${s == pageSize}"></option>
                     </select>
                 </div>
-                <button id="btnClear" class="btn btn-info ml-2" style="margin-left: 10px">Clear</button>
+                <button type="submit" class="btn btn-info ml-2" style="margin-left: 10px"
+                        onclick="document.getElementById('keyword').value=''">Clear</button>
             </form>
         </div>
     </div>
